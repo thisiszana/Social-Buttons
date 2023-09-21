@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(315deg, #ffffff, #d7e1ec);
+    font-family: "Poppins", sans-serif;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.social-list .icon {
+    list-style: none;
+    position: relative;
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-list .tooltip {
+    position: absolute;
+    top: 0;
+    color: #ffffff;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-list .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-list .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.social-list .icon:hover span,
+.social-list .icon:hover .tooltip {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .1);
+}
+
+.facebook {
+    --color: #1877f2;
+}
+
+.telegram {
+    --color: #108dda;
+}
+
+.twitter {
+    --color: #1da1f2;
+}
+
+.instagram {
+    --color: #e4405f;
+}
+
+.github {
+    --color: #333333;
+}
+
+.youtube {
+    --color: #cd201f;
+}
+
+.icon:hover,
+.icon:hover .tooltip,
+.icon:hover .tooltip::before {
+  background: var(--color);
+  color: #ffffff;
+}
